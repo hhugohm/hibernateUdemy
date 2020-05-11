@@ -11,11 +11,11 @@ import org.hibernate.Transaction;
 public class Application {
 
 	public static void main(String[] args) {
-             Transaction transaction = null;
+            
             try  {
                
                 Session session = HibernateUtil.getSessionFactory().openSession();
-                 transaction = session.beginTransaction();
+                session.getTransaction().begin();
                 
                 User user = new User();
                 user.setBirthDate(new Date());
@@ -28,7 +28,13 @@ public class Application {
                 user.setLastUpdatedDate(new Date());
                 
                 session.save(user);
-                transaction.commit();
+               session.getTransaction().commit();
+               
+               session.beginTransaction();
+                User dbUser = (User) session.get(User.class, user.getUserId());
+		dbUser.setFirstName("Joe");
+		session.update(dbUser);
+                session.getTransaction().commit();
 
                 HibernateUtil.shutdown();
             }catch(Exception e){

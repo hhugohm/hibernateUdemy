@@ -3,9 +3,11 @@ package com.infiniteskills.data.entities;
 import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Basic;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,9 +24,10 @@ public class User {
 	@Column(name="USER_ID")
 	private Long userId;
 
-	@Column(name="FIRST_NAME")
+	@Column(name="FIRST_NAME",nullable = false)
 	private String firstName;
 
+        @Basic(optional = false, fetch = FetchType.EAGER)
 	@Column(name="LAST_NAME")
 	private String lastName;
 
@@ -40,10 +43,10 @@ public class User {
 	@Column(name="LAST_UPDATED_BY")
 	private String lastUpdatedBy;
 
-	@Column(name="CREATED_DATE")
+	@Column(name="CREATED_DATE",updatable = false)
 	private Date createdDate;
 
-	@Column(name="CREATED_BY")
+	@Column(name="CREATED_BY",updatable = false)
 	private String createdBy;
 
 	public Long getUserId() {
