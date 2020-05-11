@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE")
+@Table(name = "ACCOUNT_TYPE",schema="ifinances")
 public class AccountType {
 
 	@Id
