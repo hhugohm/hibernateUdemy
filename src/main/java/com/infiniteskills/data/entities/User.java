@@ -1,6 +1,8 @@
 package com.infiniteskills.data.entities;
 
 import java.util.Date;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="FINANCES_USER" ,schema="ifinances")
+@Access(value = AccessType.FIELD)
 public class User {
 
 	@Id
