@@ -19,10 +19,10 @@ public class User {
 	@Column(name="USER_ID")
 	private Long userId;
 
-	@Column(name="FIRTS_NAME")
+	@Column(name="FIRST_NAME")
 	private String firstName;
 
-	@Column(name="FIRTS_LASTNAME")
+	@Column(name="LAST_NAME")
 	private String lastName;
 
 	@Column(name="BIRTH_DATE")
@@ -31,16 +31,16 @@ public class User {
 	@Column(name="EMAIL_ADDRESS")
 	private String emailAddress;
 
-	@Column(name="LAST_UPDATE_DATE")
+	@Column(name="LAST_UPDATED_DATE")
 	private Date lastUpdatedDate;
 
-	@Column(name="LAST_UPDATE_BY")
+	@Column(name="LAST_UPDATED_BY")
 	private String lastUpdatedBy;
 
-	@Column(name="CREATE_DATE")
+	@Column(name="CREATED_DATE")
 	private Date createdDate;
 
-	@Column(name="CREATE_BY")
+	@Column(name="CREATED_BY")
 	private String createdBy;
 
 	public Long getUserId() {
