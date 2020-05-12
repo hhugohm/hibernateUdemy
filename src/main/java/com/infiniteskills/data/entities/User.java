@@ -12,22 +12,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 
 @Entity
 @Table(name="FINANCES_USER" ,schema="ifinances")
-@Access(value = AccessType.FIELD)
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.TABLE , generator = "user_table_generator")
+    @TableGenerator(name = "user_table_generator",table = "IFINANCES_KEYS", pkColumnName = "PK_NAME",valueColumnName = "PK_VALUE")
 	@Column(name="USER_ID")
 	private Long userId;
 
 	@Column(name="FIRST_NAME",nullable = false)
 	private String firstName;
 
-        @Basic(optional = false, fetch = FetchType.EAGER)
+   
 	@Column(name="LAST_NAME")
 	private String lastName;
 

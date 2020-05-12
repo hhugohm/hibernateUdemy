@@ -11,32 +11,23 @@ import org.hibernate.Transaction;
 public class Application {
 
 	public static void main(String[] args) {
-            
+            Session session = HibernateUtil.getSessionFactory().openSession();
             try  {
                
-                Session session = HibernateUtil.getSessionFactory().openSession();
-                session.getTransaction().begin();
-                
-                User user = new User();
-                user.setBirthDate(new Date());
-                user.setCreatedBy("hugo");
-                user.setCreatedDate(new Date());
-                user.setEmailAddress("hhugohm@gmail.com");
-                user.setFirstName("Hugo");
-                user.setLastName("Hidalgo");
-                user.setLastUpdatedBy("kevin");
-                user.setLastUpdatedDate(new Date());
-                
-                session.save(user);
-               session.getTransaction().commit();
-               
-               session.beginTransaction();
-                User dbUser = (User) session.get(User.class, user.getUserId());
-		dbUser.setFirstName("Joe");
-		session.update(dbUser);
-                session.getTransaction().commit();
+               session.getTransaction().begin();
 
-                HibernateUtil.shutdown();
+			User user = new User();
+			user.setBirthDate(new Date());
+			user.setCreatedBy("hector");
+			user.setCreatedDate(new Date());
+			user.setEmailAddress("kmb385@yahoo.com");
+			user.setFirstName("hector");
+			user.setLastName("hector");
+			user.setLastUpdatedBy("hector");
+			user.setLastUpdatedDate(new Date());
+
+			session.save(user);
+			session.getTransaction().commit();
             }catch(Exception e){
                 e.printStackTrace();
             }
