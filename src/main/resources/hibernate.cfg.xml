@@ -19,8 +19,11 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
+<!--
         <mapping class="com.infiniteskills.data.entities.User"/>
+                
+                        -->
+        <mapping class="com.infiniteskills.data.entities.Bank"/>
 
     </session-factory>
 
