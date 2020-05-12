@@ -1,6 +1,6 @@
 # This Project show how to work with Hibernate 5.x
 
-Requirement
+Requirements
 
 Java 8
 Maven 3.x
