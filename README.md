@@ -1,18 +1,18 @@
 # This Project show how to work with Hibernate 5.x
 
-Requirements
+### Requirements
 
-Java 8
-Maven 3.x
-IDE Eclipse/Netbeans/IntelliJ
-Mysql 8.x
+- Java 8
+- Maven 3.x
+- IDE Eclipse/Netbeans/IntelliJ
+- Mysql 8.x
 
-Resources: /src/main/resources
+### Resources: /src/main/resources
 
-Steps
-Execute script --> schema.sql 
+### Steps
+- Execute script --> schema.sql 
 
-####Javascript　
+####JAVA CODE　
 
 ```javascript
 
