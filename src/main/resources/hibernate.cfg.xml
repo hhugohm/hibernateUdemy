@@ -28,9 +28,9 @@
         <mapping class="com.infiniteskills.data.entities.Usuario"/>
          <mapping class="com.infiniteskills.data.entities.Pais"/>
                 
-           <!--            
+                     
         <mapping class="com.infiniteskills.data.entities.Bank"/>
-        -->
+        
 
     </session-factory>
 
