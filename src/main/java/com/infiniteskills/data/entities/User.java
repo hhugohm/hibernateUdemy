@@ -20,8 +20,7 @@ import javax.persistence.TableGenerator;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE , generator = "user_table_generator")
-    @TableGenerator(name = "user_table_generator",table = "IFINANCES_KEYS", pkColumnName = "PK_NAME",valueColumnName = "PK_VALUE")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="USER_ID")
 	private Long userId;
 

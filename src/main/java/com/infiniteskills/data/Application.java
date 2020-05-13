@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.infiniteskills.data.entities.Bank;
+import com.infiniteskills.data.entities.Credential;
+import com.infiniteskills.data.entities.User;
 
 public class Application {
 
@@ -15,20 +17,22 @@ public class Application {
 		try {
 
 			transation = session.beginTransaction();
-			Bank bank = new Bank();
-			bank.setName("banco de mexico");
-			bank.setAddressLine1("direccion 1");
-			bank.setAddressLine2("direccion 2");
-			bank.setCity("mexico");
-			bank.setState("ED");
-			bank.setZipCode("52104");
-			bank.setCreatedBy("HUGO");
-			bank.setCreatedDate(new Date());
-			bank.setLastUpdatedBy("HUGO");
-			bank.setLastUpdatedDate(new Date());
-			bank.setInternational(true);
-
-			session.save(bank);
+			User user = new User();
+            user.setBirthDate(new Date());
+            user.setCreatedBy("veronica");
+            user.setCreatedDate(new Date());
+            user.setEmailAddress("colin@gmail.com");
+            user.setFirstName("veronica");
+            user.setLastName("colin");
+            user.setLastUpdatedBy("veronica");
+            user.setLastUpdatedDate(new Date());
+            
+            Credential credential = new Credential();
+            credential.setPassword("pass");
+            credential.setUsername("vroocc");
+            credential.setUser(user);
+            
+            session.save(credential);
 			transation.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
